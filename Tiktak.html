@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTak</title>
+    <script>
+        function sharePage() {
+            const shareData = {
+                title: "TikTak",
+                text: "Check out this page!",
+                url: window.location.href  // automatically shares your page link
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log("Sharing successful"))
+                    .catch((error) => console.log("Sharing failed", error));
+            } else {
+                alert("Sharing is not supported on this device.");
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* top 20, bottom only 10 */
+        }
+
+        .header img {
+            width: 100%;
+            /*background: url("logo.svg") no-repeat center center fixed;*/
+            height: 200px;
+            object-fit: cover;
+
+
+        }
+
+        .content {
+            background: #49616F;
+            /* exact section background */
+            padding: 18px 10px 40px 20px;
+            /* perfect spacing */
+
+            border-top: 10px solid #ffffff;
+            /* white top bar */
+            border-bottom: 10px solid #ffffff;
+            /* white bottom bar */
+
+            font-family: "Roboto", Arial, sans-serif;
+            /* correct clean font */
+            color: #e4ebee;
+            /* soft white text */
+        }
+
+
+        .content h1 {
+            padding-top: 20px;
+            font-size: 20px;
+            font-weight: normal;
+            /* margin: 0 0 6px 0;*/
+            color: white;
+        }
+
+        .content p {
+            font-size: 14px;
+            margin: 0;
+            color: #cad4db;
+        }
+
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 14px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon-circle {
+            width: 46px;
+            height: 46px;
+            /* border-radius: 50%;*/
+            background: #ffffff;
+            /*border: 1px solid #e3e3e3;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 14px;
+            overflow: hidden;
+            /* IMPORTANT */
+        }
+
+        .icon-circle img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            /* ensures same visual size */
+        }
+
+        .icon-circle svg {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            /* ensures same visual size */
+            display: block;
+        }
+
+
+
+
+        .share-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e91e63;
+            /* exact pink */
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- FULL-WIDTH LOGO SECTION -->
+    <div class="header">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 6500 4000">
+            <image width="1284" height="1236" transform="translate(-62.96 -1153.8) scale(5.16)"
+                xlink:href="../WhatsApp Image 2025-12-12 at 14.46.00_31a0b3f9.jpg" />
+        </svg>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>Find us on</h1>
+        <p>Follow us and get updates delivered to your favorite <br> social media channel.</p>
+    </div>
+    <div class="link-card"
+        onclick="window.open('https://www.facebook.com/tiktakofficialstores?mibextid=wwXIfr&rdid=q7lFmIN489qBs5CZ&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Snh3ALhL6%2F%3Fmibextid%3DwwXIfr#','_blank')">
+        <div class="icon-circle">
+            <img src="facebook.svg">
+
+        </div>
+
+        <span>Facebook</span>
+    </div>
+
+
+
+    <div class="link-card"
+        onclick="window.open('https://www.instagram.com/tiktak.stores/?igsh=MWE0ZHpwd2dzaG1jYQ%3D%3D#','_blank')">
+        <div class="icon-circle">
+            <img src="instgram.svg">
+
+        </div>
+        <span>Instagram</span>
+    </div>
+
+
+    <div class="link-card" onclick="window.open('https://t.me/TikTakStores','_blank')">
+        <div class="icon-circle">
+            <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#29A9EB" />
+                <path
+                    d="M34.6 14.4L30.8 33.2C30.5 34.6 29.7 34.9 28.6 34.3L23.5 30.5L21.1 32.8C20.8 33.1 20.6 33.3 20 33.3L20.4 27.9L30.1 18.7C30.5 18.3 29.9 18.1 29.4 18.5L17.1 26.2L11.9 24.6C10.8 24.3 10.8 23.5 12.1 23L33 14C33.9 13.6 34.8 14.1 34.6 14.4Z"
+                    fill="white" />
+            </svg>
+        </div>
+        <span>Telegram</span>
+    </div>
+
+
+    <div class="link-card" onclick="window.open('https://www.tiktok.com/@tik_tak_eg?_r=1&_t=ZS-91RbNapHNsy','_blank')">
+        <div class="icon-circle">
+            <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="24" fill="#000000" />
+                <rect x="14" y="14" width="20" height="20" rx="4" fill="#FFFFFF" />
+                <path
+                    d="M28 18.5C28.4 18.9 29 19.2 29.6 19.3V21.1C28.8 21 27.9 20.6 27.2 20C27.2 22.4 27.2 24.8 27.2 27.2C27.2 29.2 25.6 31 23.5 31.2C21.2 31.4 19.1 29.8 18.7 27.6C18.3 25.3 19.8 23.2 22 22.8C22.3 22.7 22.7 22.7 23 22.7V24.7C22.9 24.7 22.7 24.7 22.6 24.8C21.6 25 21 25.9 21.1 26.9C21.2 27.9 22 28.6 23 28.7C24 28.8 24.9 28 25 27C25 25.1 25 23.2 25 21.3C25 21.2 25 21.1 25 20.9V18.5H28Z"
+                    fill="black" />
+            </svg>
+        </div>
+        <span>TikTok</span>
+    </div>
+
+
+    <div class="link-card" onclick="window.open('https://wa.me/201200888313?text=','_blank')">
+        <div class="icon-circle">
+            <img src="whatsapp.svg">
+
+        </div>
+        <span>WhatsApp</span>
+    </div>
+
+
+    <div class="share-btn" onclick="sharePage()">
+        <img src="share.svg">
+    </div>
+
+
+</body>
+
+</html>
